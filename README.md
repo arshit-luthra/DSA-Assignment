@@ -1,2 +1,2 @@
-# DSA-Assignment
-LAB Assignment 1
+# DSA-Assignments
+LAB Assignments of Data Structures
