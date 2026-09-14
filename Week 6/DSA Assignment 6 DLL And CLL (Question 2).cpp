@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int value) {
+        data = value;
+        next = NULL;
+    }
+};
+
+void displayCircularList(Node* head) {
+    if (head == NULL) {
+        cout << "Circular Linked List is empty." << endl;
+        return;
+    }
+
+    Node* temp = head;
+
+    do {
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != head);
+
+    // Display the head node again
+    cout << head->data << endl;
+}
+
+int main() {
+    Node* head = new Node(20);
+    Node* second = new Node(100);
+    Node* third = new Node(40);
+    Node* fourth = new Node(80);
+    Node* fifth = new Node(60);
+
+    head->next = second;
+    second->next = third;
+    third->next = fourth;
+    fourth->next = fifth;
+    fifth->next = head;
+
+    cout << "Circular Linked List: ";
+    displayCircularList(head);
+
+    return 0;
+}
